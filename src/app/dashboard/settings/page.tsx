@@ -1,64 +1,69 @@
-// app/dashboard/settings/page.tsx
-
 import React from 'react';
 
 const SettingsPage = () => {
   return (
-    <div className="p-6 space-y-6">
-      <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
+    <div className="space-y-6">
+      <div>
+        <h3 className="text-lg font-medium">Settings</h3>
+        <p className="text-sm text-muted-foreground">
+          Manage your account settings and set e-mail preferences.
+        </p>
+      </div>
+      <div className="border-t border-border pt-6"></div>
 
-      <div className="max-w-xl bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-        <form className="space-y-6" onSubmit={(e) => {
+      <div className="max-w-xl">
+        <form className="space-y-8" onSubmit={(e) => {
           e.preventDefault();
           console.log('Settings submitted');
         }}>
           {/* Name Field */}
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-            <div className="mt-1">
-              <input
+          <div className="space-y-2">
+            <label htmlFor="name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Name</label>
+            <input
                 type="text"
                 name="name"
                 id="name"
                 defaultValue="Default User"
-                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
+                className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                 placeholder="Enter your name"
-              />
-            </div>
+            />
+            <p className="text-[0.8rem] text-muted-foreground">This is your public display name.</p>
           </div>
 
           {/* Email Field */}
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-            <div className="mt-1">
-              <input
+          <div className="space-y-2">
+            <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email</label>
+            <input
                 type="email"
                 name="email"
                 id="email"
                 defaultValue="user@example.com"
-                className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
+                className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                 placeholder="Enter your email"
-              />
-            </div>
+            />
+             <p className="text-[0.8rem] text-muted-foreground">You can manage verified email addresses in your email settings.</p>
           </div>
 
           {/* Theme Toggle (Dummy Checkbox) */}
-          <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-            <span className="text-sm font-medium text-gray-700">Dark Mode</span>
-            <label htmlFor="theme-toggle" className="flex items-center cursor-pointer">
-              <div className="relative">
-                <input type="checkbox" id="theme-toggle" className="sr-only" />
-                <div className="block bg-gray-600 w-14 h-8 rounded-full"></div>
-                <div className="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition transform translate-x-0 peer-checked:translate-x-full peer-checked:bg-white peer-checked:ring-2 peer-checked:ring-indigo-500"></div>
-              </div>
-            </label>
+          <div className="flex items-center justify-between rounded-lg border p-4">
+            <div className="space-y-0.5">
+                <label htmlFor="theme-toggle" className="text-base font-medium">Dark Mode</label>
+                <p className="text-[0.8rem] text-muted-foreground">Enable dark mode for a better viewing experience at night.</p>
+            </div>
+            <div className="flex items-center">
+                 <input type="checkbox" id="theme-toggle" className="peer sr-only" />
+                 <label htmlFor="theme-toggle" className="cursor-pointer relative inline-flex h-6 w-11 items-center rounded-full bg-input transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 peer-checked:bg-primary">
+                    <span className="sr-only">Enable dark mode</span>
+                    <span className="translate-x-1 inline-block h-4 w-4 transform rounded-full bg-background transition-transform peer-checked:translate-x-6" />
+                 </label>
+            </div>
           </div>
 
           {/* Submit Button */}
           <div>
             <button
               type="submit"
-              className="w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2"
             >
               Save Settings
             </button>

@@ -1,40 +1,93 @@
-// app/dashboard/page.tsx
-
 import React from 'react';
 
-
-
-
 const DashboardPage = () => {
- 
-
-
   return (
-    <div className="p-6 space-y-6">
-      <h1 className="text-3xl font-bold text-gray-900">Dashboard Overview</h1>
-
-      {/* Welcome Message Card (Optional) */}
-      <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-        <p className="text-lg text-gray-700">
-          👋 Welcome back! Check out the latest stats below.
-        </p>
+    <div className="space-y-6">
+      <div className="flex items-center justify-between space-y-2">
+        <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
       </div>
 
-      {/* Stat Cards Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        {/* Total Users Card */}
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-indigo-200">
-          <p className="text-sm font-medium text-gray-500">Total Users</p>
-          <p className="mt-1 text-4xl font-extrabold text-indigo-600">23</p>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="rounded-xl border bg-card text-card-foreground shadow-sm">
+          <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 className="tracking-tight text-sm font-medium">Total Users</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="h-4 w-4 text-muted-foreground"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div className="p-6 pt-0">
+            <div className="text-2xl font-bold">23</div>
+            <p className="text-xs text-muted-foreground">+20.1% from last month</p>
+          </div>
         </div>
-
-        {/* Active Users Card */}
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-green-200">
-          <p className="text-sm font-medium text-gray-500">Active Users</p>
-          <p className="mt-1 text-4xl font-extrabold text-green-600">5</p>
+        <div className="rounded-xl border bg-card text-card-foreground shadow-sm">
+          <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 className="tracking-tight text-sm font-medium">Active Users</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="h-4 w-4 text-muted-foreground"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div className="p-6 pt-0">
+            <div className="text-2xl font-bold">5</div>
+            <p className="text-xs text-muted-foreground">+180.1% from last month</p>
+          </div>
         </div>
-        
+        <div className="rounded-xl border bg-card text-card-foreground shadow-sm">
+          <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 className="tracking-tight text-sm font-medium">Sales</h3>
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="h-4 w-4 text-muted-foreground"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
+          </div>
+          <div className="p-6 pt-0">
+            <div className="text-2xl font-bold">+$12,234</div>
+            <p className="text-xs text-muted-foreground">+19% from last month</p>
+          </div>
+        </div>
+        <div className="rounded-xl border bg-card text-card-foreground shadow-sm">
+          <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 className="tracking-tight text-sm font-medium">Active Now</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="h-4 w-4 text-muted-foreground"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div className="p-6 pt-0">
+            <div className="text-2xl font-bold">+573</div>
+            <p className="text-xs text-muted-foreground">+201 since last hour</p>
+          </div>
+        </div>
+      </div>
+      
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+        <div className="col-span-4 rounded-xl border bg-card text-card-foreground shadow-sm">
+            <div className="p-6 flex flex-col space-y-1.5">
+                <h3 className="font-semibold leading-none tracking-tight">Overview</h3>
+                <p className="text-sm text-muted-foreground">Monthly user growth.</p>
+            </div>
+            <div className="p-6 pt-0 pl-2">
+                <div className="h-[200px] w-full bg-muted/20 rounded-md flex items-center justify-center text-muted-foreground text-sm">
+                    Chart Placeholder
+                </div>
+            </div>
+        </div>
+        <div className="col-span-3 rounded-xl border bg-card text-card-foreground shadow-sm">
+            <div className="p-6 flex flex-col space-y-1.5">
+                <h3 className="font-semibold leading-none tracking-tight">Recent Sales</h3>
+                <p className="text-sm text-muted-foreground">You made 265 sales this month.</p>
+            </div>
+            <div className="p-6 pt-0">
+                <div className="space-y-8">
+                    <div className="flex items-center">
+                        <div className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xs">OM</div>
+                        <div className="ml-4 space-y-1">
+                            <p className="text-sm font-medium leading-none">Olivia Martin</p>
+                            <p className="text-sm text-muted-foreground">olivia.martin@email.com</p>
+                        </div>
+                        <div className="ml-auto font-medium">+$1,999.00</div>
+                    </div>
+                    <div className="flex items-center">
+                        <div className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xs">JL</div>
+                        <div className="ml-4 space-y-1">
+                            <p className="text-sm font-medium leading-none">Jackson Lee</p>
+                            <p className="text-sm text-muted-foreground">jackson.lee@email.com</p>
+                        </div>
+                        <div className="ml-auto font-medium">+$39.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   );
